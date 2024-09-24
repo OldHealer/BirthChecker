@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title%}Главная страница{% endblock %}
+{% block content %}
+<!-- Главный контент -->
+<main class="container my-5">
+    <div class="text-center">
+        <h1>Добро пожаловать на наш веб-сайт</h1>
+        <p class="lead">Теперь вы не забудете поздравить близких и родных</p>
+        <a class="btn btn-primary" id="redirectButton" href=http://127.0.0.1:8001/login_page>Начать</a>
+        <script>
+            document.getElementById("redirectButton").addEventListener("click", function () {
+                window.location = "http://127.0.0.1:8001/login_page";
+            });
+        </script>
+    </div>
+</main>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

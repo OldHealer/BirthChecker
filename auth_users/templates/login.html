@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}Авторизация{% endblock %}
+{% block style %}
+<
+<style>
+    /* Более тёмный фисташковый фон для страницы */
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #b7ccaa; /* Фон страницы немного темнее */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Более тёмный серый фон для блока main */
+    main {
+        background-color: #d1d1d1; /* Темный серый фон */
+        border-radius: 10px;
+        padding: 40px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+        animation: fadeIn 1s ease-in-out; /* Анимация при загрузке */
+    }
+
+    /* Центрирование формы авторизации */
+    .login-form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Анимация появления формы */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Стили для полей ввода */
+    .form-control {
+        border: 2px solid transparent;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+        border-color: #007bff; /* Синий фокус */
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Стили для кнопки входа */
+    .btn-login {
+        width: 100%;
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-login:hover {
+        background-color: #0056b3; /* Темно-синий при наведении */
+    }
+
+    /* Чекбокс стили */
+    .form-check-input:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        /* Стили для футера */
+        footer .container {
+            max-width: 1200px;
+        }
+
+        footer h6 {
+            color: #343a40;
+        }
+
+        footer a {
+            color: #6c757d;
+        }
+
+        footer a:hover {
+            color: #343a40;
+        }
+
+        /* Стили для иконок соцсетей */
+        footer i {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Форма авторизации -->
+<main class="container my-5">
+    <div class="login-form">
+        <h2 class="text-center">Login</h2>
+        <form action="/login_in" method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-login">Login</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

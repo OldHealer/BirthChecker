@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Итог авторизации{% endblock %}
+{% block content %}
+<main class="container my-5">
+  <div class="user-info">
+    <h2>Hello, [User's Name]!</h2>
+    <p>Welcome to your personal dashboard. Here you can manage your profile, check your settings, and log out.
+    Мы создали тебе новый аккаунт
+    </p>
+    <ul>
+      <li><strong>Email:</strong> user@example.com</li>
+      <li><strong>Membership:</strong> Premium</li>
+      <li><strong>Last login:</strong> September 12, 2024</li>
+    </ul>
+  </div>
+
+  <div class="mt-5">
+    <h4>Quick Links</h4>
+    <ul class="list-group">
+      <li class="list-group-item"><a href="#">Update Profile Information</a></li>
+      <li class="list-group-item"><a href="#">Change Password</a></li>
+      <li class="list-group-item"><a href="#">View Billing Details</a></li>
+    </ul>
+  </div>
+</main>
+{% endblock %}
