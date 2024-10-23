@@ -10,3 +10,4 @@ DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 
 SECRET_KEY = os.getenv("SECRET_KEY")
+

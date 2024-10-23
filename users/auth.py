@@ -3,10 +3,14 @@ import uvicorn
 from fastapi import FastAPI, Depends, HTTPException, status, Security, Form
 from fastapi_jwt import JwtAccessBearer, JwtAuthorizationCredentials
 from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
 
-from auth_users import renderer
+from sources.frontend import renderer
 
-from models import *
+
+class User(BaseModel):
+    username: str
+    password: str
 
 
 class SingletonNoArgs(type):
